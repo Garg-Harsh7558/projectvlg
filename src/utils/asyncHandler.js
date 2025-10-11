@@ -8,6 +8,7 @@ export {asyncHandler}
 
 
 
+
 // ****bellow format is seen in max codes****
 // const asyncHandler=(fn)=>async(req,res,next)=>{
 //  try {
