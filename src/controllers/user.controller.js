@@ -23,9 +23,7 @@ const generateAccessAndRefreshTokens = async (userId) => {
 };
 
 const registerUser = asyncHandler(async (req, res) => {
-  // res.status(200).json({
-  //   message: "ok",
-  // });
+  
   //steps for user registration
   // get user details from frontend
   // validation - not empty
@@ -36,6 +34,7 @@ const registerUser = asyncHandler(async (req, res) => {
   // remove password and refresh token field from response
   // check for user creation
   // return res
+  console.log(req.body);
   const { fullName, email, username, password } = req.body;
   if (
     [fullName, email, username, password].some(
@@ -104,7 +103,7 @@ const loginUser = asyncHandler(async (req, res) => {
  const { username, email, password } = req.body;
   console.log(req.body);
 
-  if (!username || !email) {
+  if (!username && !email) {
     throw new ApiError(400, "either username or email is required");
   }
   const user = await User.findOne({
