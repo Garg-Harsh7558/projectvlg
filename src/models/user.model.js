@@ -27,6 +27,14 @@ const userSchema=new Schema({
      type :String, //cloudinary url
     required:true,
   },
+  cloudinaryAvatarId:{
+    type:String,
+    required:true
+  },
+  cloudinaryCoverImageId:{
+    type:String,
+    required:true
+  },
   coverImage:{
       type :String, //cloudinary url
       default:""
